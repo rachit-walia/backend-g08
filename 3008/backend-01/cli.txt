@@ -1,7 +1,28 @@
-and --
-nor--
-or --
-not exits
-deleteone
-delteMany
-findOneAndDelete
+create a database and do the following commands in it using mongodb
+
+and -- use database
+       db.mycollection.insertone({name:"john",age:30,city:"New York"})
+
+       to insert multiple documents at once
+       db.myCollection.insertMany([
+    { name: "Jane", age: 25, city: "Los Angeles" },
+    { name: "Mark", age: 35, city: "Chicago" }
+])
+
+nor--  db.users.find({
+    $nor: [
+        { "age": 30 },
+        { "city": "Chicago" }
+    ]
+})
+
+or --  db.collection.find({ $or: [ <expression1>, <expression2>, ... ] })
+
+not exist-- db.users.find({ "age": { $exists: false } })
+
+deleteone-- db.users.deleteOne({ "city": "New York" })
+
+delteMany--db.users.deleteMany({ "city": "Chicago" })
+
+findOneAndDelete-- db.collection.findOneAndDelete(filter, options)
+
