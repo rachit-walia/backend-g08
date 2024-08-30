@@ -1,0 +1,7 @@
+and --
+nor--
+or --
+not exits
+deleteone
+delteMany
+findOneAndDelete
