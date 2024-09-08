@@ -77,9 +77,19 @@ const Login = () => {
     const imageURL = 'https://imgs.search.brave.com/_p5NE5guO_tPdIUsc3Quq6hQPsm7iIUar2mnbPwX1Fk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/dmVjdG9yc3RvY2su/Y29tL2kvcHJldmll/dy0xeC8yMy84OC9y/dy1sb2dvLWxldHRl/ci1tb25vZ3JhbS1z/bGFzaC13aXRoLW1v/ZGVybi12ZWN0b3It/Mjc5ODIzODguanBn';
 
     const [account, setAccount] = useState('login');
+    const [formData, setFormData] = useState({
+        username: '',
+        email: '',
+        password: '',
+        confirmPassword: ''
+    });
 
     const toggleAccount = () => {
         setAccount(account === 'login' ? 'signup' : 'login');
+    };
+
+    const onInputChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     return (
@@ -91,8 +101,8 @@ const Login = () => {
                     <Wrapper>
                         {account === 'login' ? (
                             <>
-                                <TextField label="Username" variant="standard" fullWidth />
-                                <TextField label="Password" type="password" variant="standard" fullWidth />
+                                <TextField label="Username" variant="standard" fullWidth name="username" onChange={onInputChange} />
+                                <TextField label="Password" type="password" variant="standard" fullWidth name="password" onChange={onInputChange} />
                                 <LoginButton variant="contained" color="primary">Login</LoginButton>
                                 <Typography align="center" variant="body2" color="textSecondary">OR</Typography>
                                 <CreateAccountButton variant="outlined" onClick={toggleAccount}>
@@ -101,10 +111,10 @@ const Login = () => {
                             </>
                         ) : (
                             <>
-                                <TextField label="Username" variant="standard" fullWidth />
-                                <TextField label="Email" variant="standard" fullWidth />
-                                <TextField label="Password" type="password" variant="standard" fullWidth />
-                                <TextField label="Confirm Password" type="password" variant="standard" fullWidth />
+                                <TextField label="Username" onChange={onInputChange} variant="standard" name="username" fullWidth />
+                                <TextField label="Email" onChange={onInputChange} variant="standard" name="email" fullWidth />
+                                <TextField label="Password" onChange={onInputChange} type="password" variant="standard" name="password" fullWidth />
+                                <TextField label="Confirm Password" onChange={onInputChange} type="password" variant="standard" name="confirmPassword" fullWidth />
                                 <LoginButton variant="contained" color="primary">Sign Up</LoginButton>
                                 <Typography align="center" variant="body2" color="textSecondary">OR</Typography>
                                 <CreateAccountButton variant="outlined" onClick={toggleAccount}>
