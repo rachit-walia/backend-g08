@@ -16,6 +16,11 @@ const Home = () => {
     backgroundColor: '#ffffff', // White background for header
     padding: '10px 20px',
     borderBottom: '1px solid #e5e7eb',
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+    position: 'fixed',
+    width: '100%',
+    top: 0,
+    zIndex: 1000,
   };
 
   const headerLinkStyle = {
@@ -40,6 +45,7 @@ const Home = () => {
     cursor: 'pointer',
     transition: 'background-color 0.3s, box-shadow 0.3s',
     boxSizing: 'border-box',
+    marginLeft: '10px', // Ensure space between buttons
   };
 
   const buttonHoverStyle = {
@@ -134,7 +140,7 @@ const Home = () => {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', paddingTop: '60px' }}>
       {/* Header Section */}
       <header style={headerStyle}>
         <div style={{ display: 'flex', gap: '15px' }}>
@@ -181,7 +187,7 @@ const Home = () => {
               <img src="https://imgs.search.brave.com/-12dHJKnY9ogsst7sVNiqtkgZbmoCZ3Cv7lg_74Sbws/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTA1/NjM5NDYzNi9waG90/by9uZW9uLWxpZ2h0/LWFscGhhYmV0LXIt/d2l0aC1jbGlwcGlu/Zy1wYXRoLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz04Qnoz/OVBFVGxCVS1CbWww/bkFYdDB3RUd2d1pm/SGFubFdoT3ZwUElE/VjJFPQ" alt="Rachit Walia" style={bloggerImageStyle} />
               <div style={bloggerContentStyle}>
                 <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Rachit Walia</h3>
-                <p>Rachit recently shared his thoughts on modern technology trends. He delves into the impact of AI on everyday life and how it's shaping the future of various industries. Rachit’s insights are not only thought-provoking but also provide a practical perspective on emerging technologies.</p>
+                <p>Rachit Walia writes about innovative approaches in the field of technology. His recent blogs discuss advancements in artificial intelligence and how they are shaping the future of various industries. A thought leader with a knack for explaining complex topics in an engaging manner.</p>
               </div>
             </div>
           </div>
