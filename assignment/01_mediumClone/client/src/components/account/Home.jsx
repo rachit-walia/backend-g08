@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const Home = () => {
   const navigate = useNavigate();
 
-  // Function to handle navigation to login page
+  
   const navigateToLogin = () => {
     navigate('/login');
   };
@@ -13,7 +13,7 @@ const Home = () => {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: '#ffffff', // White background for header
+    backgroundColor: '#ffffff', 
     padding: '10px 20px',
     borderBottom: '1px solid #e5e7eb',
     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
@@ -24,7 +24,7 @@ const Home = () => {
   };
 
   const headerLinkStyle = {
-    color: '#000000', // Black text color
+    color: '#000000', 
     textDecoration: 'none',
     padding: '10px 15px',
     borderRadius: '5px',
@@ -32,12 +32,12 @@ const Home = () => {
   };
 
   const headerLinkHoverStyle = {
-    backgroundColor: '#f0f0f0', // Light gray background on hover
-    color: '#000000', // Black text color on hover
+    backgroundColor: '#f0f0f0', 
+    color: '#000000', 
   };
 
   const buttonStyle = {
-    backgroundColor: '#3b82f6', // Blue background color for the button
+    backgroundColor: '#3b82f6', 
     color: '#ffffff',
     border: 'none',
     padding: '10px 20px',
@@ -45,11 +45,11 @@ const Home = () => {
     cursor: 'pointer',
     transition: 'background-color 0.3s, box-shadow 0.3s',
     boxSizing: 'border-box',
-    marginLeft: '10px', // Ensure space between buttons
+    marginLeft: '10px', 
   };
 
   const buttonHoverStyle = {
-    backgroundColor: '#2563eb', // Darker blue background color on hover
+    backgroundColor: '#2563eb', 
     boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
   };
 
@@ -62,7 +62,7 @@ const Home = () => {
   const logoTextStyle = {
     fontSize: '2rem',
     fontWeight: 'bold',
-    color: '#000000', // Black color for logo text
+    color: '#000000', 
   };
 
   const logoImageStyle = {
@@ -73,26 +73,26 @@ const Home = () => {
 
   const sidebarStyle = {
     width: '20%',
-    backgroundColor: '#1f2937', // Dark background color for the sidebar
+    backgroundColor: '#1f2937', 
     padding: '20px',
-    color: '#f9fafb', // Light text color
+    color: '#f9fafb', 
   };
 
   const sidebarHeadingStyle = {
     fontSize: '1.75rem',
     fontWeight: 'bold',
-    color: '#f9fafb', // Light color for heading
+    color: '#f9fafb', 
     marginBottom: '15px',
   };
 
   const sidebarParagraphStyle = {
-    color: '#e5e7eb', // Lighter color for the paragraph
+    color: '#e5e7eb', 
   };
 
   const headSectionStyle = {
     width: '60%',
     padding: '20px',
-    backgroundColor: '#f3f4f6', // Light background color
+    backgroundColor: '#f3f4f6', 
     borderRadius: '8px',
     boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
   };
@@ -111,15 +111,15 @@ const Home = () => {
   };
 
   const bloggerContentStyle = {
-    color: '#4b5563', // Darker text color for the content
+    color: '#4b5563', 
   };
 
   const rightSidebarStyle = {
     width: '20%',
-    backgroundColor: '#1f2937', // Dark background color matching the left sidebar
+    backgroundColor: '#1f2937', 
     padding: '20px',
-    borderLeft: '1px solid #e5e7eb', // Border between main content and right sidebar
-    color: '#f9fafb', // Light text color
+    borderLeft: '1px solid #e5e7eb', 
+    color: '#f9fafb', 
   };
 
   const profileStyle = {
@@ -132,11 +132,11 @@ const Home = () => {
     fontSize: '1.25rem',
     fontWeight: '600',
     marginBottom: '5px',
-    color: '#f9fafb', // Light color for the heading
+    color: '#f9fafb', 
   };
 
   const profileParagraphStyle = {
-    color: '#e5e7eb', // Lighter color for the paragraph
+    color: '#e5e7eb', 
   };
 
   return (
