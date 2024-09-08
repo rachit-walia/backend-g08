@@ -1,14 +1,11 @@
-
 import './App.css';
 // components
 import Login from './components/account/Login';
 
-
-
 function App() {
   return (
-    <div >
-      <Login/>
+    <div style={{}}>
+      <Login />
     </div>
   );
 }

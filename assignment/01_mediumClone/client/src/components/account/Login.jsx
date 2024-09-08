@@ -1,12 +1,17 @@
+import { useState } from 'react';
 import { Box, TextField, Button, styled, Typography } from '@mui/material';
 
 const Background = styled(Box)`
     background: linear-gradient(135deg, #ece9e6, #ffffff);
     height: 100vh;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    margin: 0;  // Ensure no extra margin
+    padding: 0; // Ensure no extra padding
+    overflow: hidden;  // Prevent scrolling
 `;
 
 const BackgroundText = styled(Typography)`
@@ -23,7 +28,6 @@ const BackgroundText = styled(Typography)`
 
 const Component = styled(Box)`
     width: 400px;
-    margin: auto;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     background-color: #ffffff;
@@ -72,18 +76,42 @@ const CreateAccountButton = styled(Button)`
 const Login = () => {
     const imageURL = 'https://imgs.search.brave.com/_p5NE5guO_tPdIUsc3Quq6hQPsm7iIUar2mnbPwX1Fk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/dmVjdG9yc3RvY2su/Y29tL2kvcHJldmll/dy0xeC8yMy84OC9y/dy1sb2dvLWxldHRl/ci1tb25vZ3JhbS1z/bGFzaC13aXRoLW1v/ZGVybi12ZWN0b3It/Mjc5ODIzODguanBn';
 
+    const [account, setAccount] = useState('login');
+
+    const toggleAccount = () => {
+        setAccount(account === 'login' ? 'signup' : 'login');
+    };
+
     return (
         <Background>
             <BackgroundText>Write Blog, Create Blog</BackgroundText>
             <Component>
                 <Box>
-                    <Image src={imageURL} alt="login" />
+                    <Image src={imageURL} alt={account === 'login' ? 'Login' : 'Sign Up'} />
                     <Wrapper>
-                        <TextField label="Username" variant="standard" />
-                        <TextField label="Password" type="password" variant="standard" />
-                        <LoginButton variant="contained" color="primary">Login</LoginButton>
-                        <Typography align="center" variant="body2" color="textSecondary">OR</Typography>
-                        <CreateAccountButton variant="outlined">Create an Account</CreateAccountButton>
+                        {account === 'login' ? (
+                            <>
+                                <TextField label="Username" variant="standard" fullWidth />
+                                <TextField label="Password" type="password" variant="standard" fullWidth />
+                                <LoginButton variant="contained" color="primary">Login</LoginButton>
+                                <Typography align="center" variant="body2" color="textSecondary">OR</Typography>
+                                <CreateAccountButton variant="outlined" onClick={toggleAccount}>
+                                    Create an Account
+                                </CreateAccountButton>
+                            </>
+                        ) : (
+                            <>
+                                <TextField label="Username" variant="standard" fullWidth />
+                                <TextField label="Email" variant="standard" fullWidth />
+                                <TextField label="Password" type="password" variant="standard" fullWidth />
+                                <TextField label="Confirm Password" type="password" variant="standard" fullWidth />
+                                <LoginButton variant="contained" color="primary">Sign Up</LoginButton>
+                                <Typography align="center" variant="body2" color="textSecondary">OR</Typography>
+                                <CreateAccountButton variant="outlined" onClick={toggleAccount}>
+                                    Already have an account? Login
+                                </CreateAccountButton>
+                            </>
+                        )}
                     </Wrapper>
                 </Box>
             </Component>
