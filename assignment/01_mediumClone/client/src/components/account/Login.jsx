@@ -9,9 +9,9 @@ const Background = styled(Box)`
     justify-content: center;
     align-items: center;
     position: relative;
-    margin: 0;  // Ensure no extra margin
-    padding: 0; // Ensure no extra padding
-    overflow: hidden;  // Prevent scrolling
+    margin: 0;  
+    padding: 0; 
+    overflow: hidden;  
 `;
 
 const BackgroundText = styled(Typography)`
