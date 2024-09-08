@@ -74,8 +74,6 @@ const CreateAccountButton = styled(Button)`
 `;
 
 const Login = () => {
-    const imageURL = 'https://imgs.search.brave.com/_p5NE5guO_tPdIUsc3Quq6hQPsm7iIUar2mnbPwX1Fk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/dmVjdG9yc3RvY2su/Y29tL2kvcHJldmll/dy0xeC8yMy84OC9y/dy1sb2dvLWxldHRl/ci1tb25vZ3JhbS1z/bGFzaC13aXRoLW1v/ZGVybi12ZWN0b3It/Mjc5ODIzODguanBn';
-
     const [account, setAccount] = useState('login');
     const [formData, setFormData] = useState({
         username: '',
@@ -92,32 +90,107 @@ const Login = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    const handleLogin = () => {
+        // Handle login logic here
+        console.log('Login data:', formData);
+        // Redirect or perform further actions after login
+    };
+
+    const handleSignup = () => {
+        // Handle signup logic here
+        console.log('Signup data:', formData);
+        // Redirect or perform further actions after signup
+    };
+
     return (
         <Background>
             <BackgroundText>Write Blog, Create Blog</BackgroundText>
             <Component>
                 <Box>
-                    <Image src={imageURL} alt={account === 'login' ? 'Login' : 'Sign Up'} />
+                    <Image src='https://imgs.search.brave.com/_p5NE5guO_tPdIUsc3Quq6hQPsm7iIUar2mnbPwX1Fk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/dmVjdG9yc3RvY2su/Y29tL2kvcHJldmll/dy0xeC8yMy84OC9y/dy1sb2dvLWxldHRl/ci1tb25vZ3JhbS1z/bGFzaC13aXRoLW1v/ZGVybi12ZWN0b3It/Mjc5ODIzODguanBn' alt={account === 'login' ? 'Login' : 'Sign Up'} />
                     <Wrapper>
                         {account === 'login' ? (
                             <>
-                                <TextField label="Username" variant="standard" fullWidth name="username" onChange={onInputChange} />
-                                <TextField label="Password" type="password" variant="standard" fullWidth name="password" onChange={onInputChange} />
-                                <LoginButton variant="contained" color="primary">Login</LoginButton>
+                                <TextField 
+                                    label="Username" 
+                                    variant="standard" 
+                                    fullWidth 
+                                    name="username" 
+                                    onChange={onInputChange} 
+                                    value={formData.username}
+                                />
+                                <TextField 
+                                    label="Password" 
+                                    type="password" 
+                                    variant="standard" 
+                                    fullWidth 
+                                    name="password" 
+                                    onChange={onInputChange} 
+                                    value={formData.password}
+                                />
+                                <LoginButton 
+                                    variant="contained" 
+                                    color="primary" 
+                                    onClick={handleLogin}
+                                >
+                                    Login
+                                </LoginButton>
                                 <Typography align="center" variant="body2" color="textSecondary">OR</Typography>
-                                <CreateAccountButton variant="outlined" onClick={toggleAccount}>
+                                <CreateAccountButton 
+                                    variant="outlined" 
+                                    onClick={toggleAccount}
+                                >
                                     Create an Account
                                 </CreateAccountButton>
                             </>
                         ) : (
                             <>
-                                <TextField label="Username" onChange={onInputChange} variant="standard" name="username" fullWidth />
-                                <TextField label="Email" onChange={onInputChange} variant="standard" name="email" fullWidth />
-                                <TextField label="Password" onChange={onInputChange} type="password" variant="standard" name="password" fullWidth />
-                                <TextField label="Confirm Password" onChange={onInputChange} type="password" variant="standard" name="confirmPassword" fullWidth />
-                                <LoginButton variant="contained" color="primary">Sign Up</LoginButton>
+                                <TextField 
+                                    label="Username" 
+                                    onChange={onInputChange} 
+                                    variant="standard" 
+                                    name="username" 
+                                    fullWidth 
+                                    value={formData.username}
+                                />
+                                <TextField 
+                                    label="Email" 
+                                    onChange={onInputChange} 
+                                    variant="standard" 
+                                    name="email" 
+                                    fullWidth 
+                                    value={formData.email}
+                                />
+                                <TextField 
+                                    label="Password" 
+                                    onChange={onInputChange} 
+                                    type="password" 
+                                    variant="standard" 
+                                    name="password" 
+                                    fullWidth 
+                                    value={formData.password}
+                                />
+                                <TextField 
+                                    label="Confirm Password" 
+                                    onChange={onInputChange} 
+                                    type="password" 
+                                    variant="standard" 
+                                    name="confirmPassword" 
+                                    fullWidth 
+                                    value={formData.confirmPassword}
+                                />
+                                <LoginButton 
+                                    variant="contained" 
+                                    color="primary" 
+                                    onClick={handleSignup}
+                                >
+                                    Sign Up
+                                </LoginButton>
                                 <Typography align="center" variant="body2" color="textSecondary">OR</Typography>
-                                <CreateAccountButton variant="outlined" onClick={toggleAccount}>
+                                <CreateAccountButton 
+                                    variant="outlined" 
+                                    onClick={toggleAccount}
+                                >
                                     Already have an account? Login
                                 </CreateAccountButton>
                             </>
